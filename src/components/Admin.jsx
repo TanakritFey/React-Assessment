@@ -6,16 +6,9 @@ import { DataContext } from "../Context";
 function Admin() {
   const {user,deleteData,createData} = useContext(DataContext);
 
-/*   const [id,setId] = useState(uuidv4())
- */const [name, setName] = useState();
+  const [name, setName] = useState();
   const [lastname, setLastname] = useState();
   const [position, setPosition] = useState();
-
- /*  useEffect(() => {
-    setId(uuidv4());
-  }, []); */
-
-
 
   return (
     <div>
@@ -84,8 +77,8 @@ function Admin() {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200 dark:divide-gray-700 dark:bg-gray-900">
-          {user.map((item,index)=>(
-            <tr key={index}>
+          {user.map((item)=>(
+            <tr key={item.id}>
             <td className="px-4 py-4 text-sm border text-gray-500 dark:text-gray-300 text-center ">
               {item.name}
             </td>
@@ -95,7 +88,7 @@ function Admin() {
             <td className="px-4 py-4 text-sm border text-gray-500 dark:text-gray-300 text-center ">
               {item.position}
             </td>
-            <td className="px-4 py-4 text-sm border text-gray-500 dark:text-gray-300 text-center "> <button onClick={()=>deleteData(item.id)}>Delete</button></td>
+            <td className="px-4 py-4 text-sm border text-red-700 dark:text-gray-300 text-center "> <button className="text-orange-500" onClick={() => deleteData(item.id)}>Delete</button></td>
           </tr>
           ))}
         </tbody>

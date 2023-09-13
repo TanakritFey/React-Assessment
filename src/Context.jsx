@@ -65,13 +65,13 @@ function Context({ children }) {
 
   // Delete Data
   const deleteData = async (id) => {
-    console.log(id);
     const response = await axios.delete(
       `https://jsd5-mock-backend.onrender.com/member/${id}`
     );
     if(response.status === 200 && response.data){
-      setReload(!reload)
+      console.log('Delete');
     }
+    setReload(!reload);
   };
   
 
