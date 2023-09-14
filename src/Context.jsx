@@ -58,8 +58,9 @@ function Context({ children }) {
       requestData
     );
     if (response.status === 200) {
-      setReload(!reload)
+      console.log('Create Complete');
     }
+    setReload(!reload)
   };
 
 

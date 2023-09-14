@@ -1,6 +1,7 @@
 import Button from "./components/Button";
 
 function Home() {
+  
   return (
     <>
       <div className="text-center text-6xl font-bold my-20">
